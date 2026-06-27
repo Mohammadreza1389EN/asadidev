@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <title>mraweb</title>
+</head>
+<body>
+    <div id="site-body">
+    <header>
+        <h1>وبلاگ محمدرضا اسدی</h1>
+    </header>
+    <nav>
+        <div class="navbar">
+            <h4 class="quadcopter">
+                <i class="fas fa-chevron-down"></i>پروژه ها
+                <ul class="project_menu">
+                    <li><a href="../quadcopter/quadcopter.html">کوادکوپتر</a></li>
+                    <li><a href="../abvand/abvand.html">آب_وند</a></li>
+                </ul>
+            </h4>
+
+            <h4><i class="fas fa-chevron-down"></i>مقاله ها</h4>
+            <h4 class="repository">
+                <i class="fas fa-chevron-down"></i>مخازن
+                    <ul class="repository_menu">
+                    <li><a href="TFT_library.html">کتابخانه ساده نمایشگر TFT 3.5inch</a></li>
+                </ul>
+            </h4>
+            <h4 class="home"><a href="../../index.html"><i class="fas fa-home"></i></a></h4>
+        </div>
+    </nav>
+    <main>
+        <div class="describe">
+            <div id="describe-title">کتابخانه نمایشگر TFT 3.5 رنگی</div>
+            <div class="describe-text">
+                 این کتابخانه یک پیاده‌سازی سبک (Lightweight) و بهینه‌سازی شده از کتابخانه اصلی نمایشگرهای TFT 3.5 اینچ است که برای محیط‌های آردوینو و طیف گسترده‌ای از میکروکنترلرها توسعه یافته است.
+            </div> 
+            <br>
+            <div class="describe-text">
+               <ul class="describe-text">
+                <li>سادگی در پیاده‌سازی: ارائه توابعی ساده برای ترسیم اشکال هندسی مختلف.</li>
+                <li>مدیریت رویدادها (Event Handling): امکان تعریف قابلیت کلیک بر روی اشیاء (Objects) بدون نیاز به محاسبه دستی مختصات برخورد (Collision Detection).</li>
+                <li>بهینه‌سازی منابع: کاهش پیچیدگی کد برای دستیابی به سرعت اجرای بالاتر در سیستم‌های Embedded.</li>
+               </ul>
+            </div>
+            <br><br>
+            <div class="describe-text">فراخوانی کتابخانه :</div>
+            <pre><code class="language-cpp">
+#include &lt;Arduino.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;TFT_eSPI.h&gt;
+#include &lt;XPT2046_Touchscreen.h&gt;
+#include &lt;tfUI.h&gt;
+#include &lt;pgmspace.h&gt;
+            </code></pre>
+
+            <div class="describe-text">تعریف پین های نمایشگر :</div>
+            <pre><code class="language-cpp">
+#define TFT_CS   5 
+#define TFT_DC   2 
+#define TFT_RST  4  
+#define TOUCH_CS 15  
+#define TOUCH_IRQ 21 
+            </code></pre>
+
+            <div class="describe-text">تعریف شی SPI و tfUI :</div>
+            <pre><code class="language-cpp">
+XPT2046_Touchscreen ts(TOUCH_CS);
+TFT_eSPI tft = TFT_eSPI();
+            </code></pre>
+ 
+            <div class="describe-text">تعریف اشکال مختلف :</div>
+            <pre><code class="language-cpp">
+tf::RoundedRect NAME = tf::makeRounded(tft, WIDTH, HEIGHT, BORDER_RADIUS);  //roundedrect تعریف
+tf::Rect NAME = tf::makeRect(tft, WIDTH, HEIGHT);                           //تعریف مستطیل
+tf::Circle NAME = tf::makeCircle(tft, RADIUS);                              //تعریف دایره
+tf::Text NAME = tf::makeText(tft, SIZE);                                    //تعریف متن
+            </code></pre>
+
+            <div class="describe-text">تعریف عکس(کد hex)</div>
+            <pre><code class="language-cpp">
+const uint16_t IMAGE_HEX[SIZE] PROGMEM = {
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FD5,0x0F74,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0...
+};
+
+    tf::ImageHEX NAME(tft, IMAGE_HEX, WIDTH, HEIGHT);
+            </code></pre>
+
+            <div class="describe-text">تنظیمات اشکال :</div>
+             <pre><code class="language-cpp">
+NAME.setPosition(X,Y);             //تعیین موقعیت
+NAME.setFillColor(COLOR);          //رنگ داخل شکل
+NAME.setOutlineColor(COLOR);       //رنگ دور شکل
+NAME.setOutlineThickness(SIZE);    //ضخامت دور شکل
+NAME.setVisible(BOOL);             //وضعیت مشاهده
+NAME.draw();                       //رسم شکل
+NAME.clear();                      //پاک کردن شکل
+            </code></pre>
+            
+            <div class="describe-text">تعریف رنگ :</div>
+            <pre><code class="language-cpp">
+#define NAME tft.color565(R, G, B)    // 0 &lt;= R,G,B &lt;= 255
+            </code></pre>
+            
+            <div class="describe-text">تنظیمات متن :</div>
+            <pre><code class="language-cpp">
+NAME.setPosition(X,Y);       //تعیین موقعیت
+NAME.setbgColor(COLOR);      //رنگ پس زمینه
+NAME.setColor(COLOR);        //رنگ متن
+NAME.setString(STRING);      //متن عنصر
+NAME.setText(STRING);        //به روز رسانی متن عنصر
+NAME.setVisible(BOOL);       //حالت نمایش
+NAME.draw();                 //رسم متن
+NAME.clear();                //پاک کردن متن
+</code></pre>            
+            
+            <div class="describe-text">تنظیمات عکس : </div>
+            <pre><code class="language-cpp">
+NAME.setPosition(X,Y);         //تعیین موقعیت
+NAME.setVisible(BOOL);         //حالت نمایش
+NAME.clear();                  //پاک کردن از صفحه
+NAME.draw();                   //رسم تصویر
+            </code></pre>
+
+            <div class="describe-text">برسی کلیک روی عنصر : </div>
+            <pre><code class="language-cpp">
+NAME.isClicked(ts)    //اگر کلیک شده باشد 1 اگر نه 0
+//مثال:
+
+if(NAME.isClicked(ts))
+   Serial.print("clicked!");
+else
+   Serial.print("notclicked");
+            </code></pre>
+
+            <div class="download">دانلود فایل ZIP کتابخانه</div>
+        </div>
+    </main> 
+    <footer>
+        <div class="footer-fa">
+           <br> وبلاگ محمدرضا اسدی<br>
+            ایمیل : m82971311<br>
+            تلگرام/روبیکا : @MuhammadRezaAsadi<br>
+        </div>
+
+        <div class="footer-en">
+            Mohammadreza Asadi's <br>Blog
+            Email: m82971311<br>
+            Telegram/Rubika : @MuhammadRezaAsadi<br>
+        </div>
+        <div class="footer-txt">
+            <br>Copyright &copy; 2024-2026 asadidev.ir | تمامی حقوق مادی و معنوی این سایت متعلق به asadidev.ir می‌باشد.
+        </div>
+    </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c++.min.js"></script>
+    <script src="app.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (typeof Prism !== 'undefined') {
+                Prism.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>
+

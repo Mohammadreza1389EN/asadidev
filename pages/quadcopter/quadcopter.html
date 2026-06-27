@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>mraweb</title>
+</head>
+<body>
+    <div id="site-body">
+    <header>
+        <h1>وبلاگ محمدرضا اسدی</h1>
+    </header>
+    <nav>
+        <div class="navbar">
+            <h4 class="quadcopter">
+                <i class="fas fa-chevron-down"></i>پروژه ها
+                <ul class="project_menu">
+                    <li><a href="quadcopter.html">کوادکوپتر</a></li>
+                    <li><a href="../abvand/abvand.html">آب_وند</a></li>
+                </ul>
+            </h4>
+
+            <h4><i class="fas fa-chevron-down"></i>مقاله ها</h4>
+            <h4 class="repository">
+                <i class="fas fa-chevron-down"></i>مخازن
+                    <ul class="repository_menu">
+                    <li><a href="../TFT_library/TFT_library.html">کتابخانه ساده نمایشگر TFT 3.5inch</a></li>
+                </ul>
+            </h4>
+            <h4 class="home"><a href="../../index.html"><i class="fas fa-home"></i></a></h4>
+        </div>
+    </nav>
+    <main>
+        <div class="describe">
+            <div id="describe-title">کوادکوپتر</div>
+            <div class="describe-text">
+                سلام! من محمدرضا اسدی هستم از زنجان، ایران. این اولین کوادکوپتر منه که با زبان برنامه‌نویسی C++ برنامه‌نویسی کردم. این کوادکوپتر حدود ۵۰ سانتی‌متر طول و عرض داره و با چهار موتور براشلس KV1000 کنترل می‌شه. جالبه که این کوادکوپتر از طریق گوشی موبایل کنترل می‌شه و نیازی به کنترل رادیویی نداره. برد کنترل پرواز این کوادکوپتر از چیپ atmega2560 استفاده می‌کنه که تفاوتی با برد آردوینو نداره. برای ارتباط با گوشی هم از ESP8266 استفاده شده.
+            </div> 
+            <div class="quadcopter-image"></div>
+            <div class="describe-text">این کوادکوپتر با ابعاد بدنه ۴۹×۴۹ سانتی‌متر و استفاده از فیلامنت ABS (ساخته شده با پرینتر سه بعدی) طراحی شده است. به دلیل متریال به‌کار رفته، بدنه دارای استحکام و وزن مناسبی است که منجر به وزن نهایی ۱۱۰۳ گرم شده است.</div>
+            <br>
+            <ul class="describe-text">
+                <li>سیستم پیشران (Propulsion System): بهره‌گیری از ۴ موتور براشلس با نرخ ۱۰۰۰KV، مجهز به ESCهای ۳۰ آمپر و ملخ‌های ۹.۵ اینچ. این سیستم با استفاده از یک باتری Li-Po ۳ سلول (11.1V) و ظرفیت ۲۲۰۰ میلی‌آمپر ساعت با نرخ تخلیه (Discharge Rate) ۳۵C تأمین می‌شود که توان خروجی تا ۷۷ آمپر را فراهم می‌کند.</li>
+                <br>
+                <li>سیستم کنترل و ناوبری (Control & Navigation): هسته اصلی عملیات بر عهده یک فلایت‌کنترل اختصاصی است که با طراحی PCB توسط خودم و بهره‌گیری از میکروکنترلر ATmega2560 و ماژول ESP8266 توسعه یافته است. الگوریتم‌های کنترل تعادلی بر پایه پروتکل PID و فیلترهای پردازشی پیاده‌سازی شده‌اند.</li>
+                <br>
+                <li>ارتباطات و ریموت: این پهپاد فاقد رادیوکنترل سنتی بوده و از طریق یک اپلیکیشن اختصاصی (طراحی شده توسط خودم) بر روی گوشی هوشمند کنترل می‌شود. همچنین سیستم مجهز به GPS برای نمایش موقعیت مکانی است (با توجه به محدودیت‌های فعلی، دقت ناوبری در سطح پایه است).</li>
+            </ul>
+
+            <video class="quadcopter_video" controls width="65%" poster="../../image/quadcopter_fly.png">
+            <source src="../../video/quadcopter_video.mp4" type="video/mp4">
+            مرورگر شما از تگ ویدیو پشتیبانی نمی‌کند.
+            </video>
+
+            <div class="describe-text">نسخه دارای گریپر  : </div>
+
+            <video class="quadcopter_video" controls width="65%" poster="../../image/quadcopter_fly2.png">
+            <source src="../../video/quadcopter_video2.mp4" type="video/mp4">
+            مرورگر شما از تگ ویدیو پشتیبانی نمی‌کند.
+            </video>
+
+            <div class="describe-text">سیستم پیشران</div>
+            <ul class="describe-text-en">
+                <li>Motor: Brushless Motor, 1000KV</li>
+                <li>Propeller: 9.5 inch High-Efficiency Propeller</li>
+                <li>ESC (Electronic Speed Controller): 30A Brushless ESC</li>
+                <li>Power Source: 3S LiPo Battery (2200mAh, 35C Discharge Rate)</li>
+            </ul>
+            <div class="describe-text">سیستم کنترل و پردازش</div>
+            <ul class="describe-text-en">
+                <li>Main Flight Controller (MCU): ATmega2560 (High-performance AVR)</li>
+                <li>Communication Module: ESP8266 (For Wi-Fi Telemetry/Control)</li>
+                <li>Inertial Measurement Unit (IMU): MPU6050 (6-Axis Gyroscope & Accelerometer)</li>
+            </ul>
+            <div class="describe-text">سیستم ناوبری</div>
+            <ul class="describe-text-en">
+                <li>GPS Module: High-precision GNSS Module</li>
+            </ul>
+            <div class="describe-text">دسترسی به مخزن کامل، شامل فایل‌های سورس C++، نقشه‌های سخت‌افزار و فایل‌های پیکربندی، از طریق گیت‌هاب فراهم است:</div>
+            <div class="github-link"><a class="describe-text" href="https://github.com/Mohammadreza1389EN/quadcopter-drone-project">لینک گیت هاب            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.17-.35 6.49-1.56 6.49-7A5.48 5.48 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.48 5.48 0 0 0-1.5 3.78c0 5.42 3.3 6.64 6.49 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div>
+        </div>
+    </main> 
+    <footer>
+        <div class="footer-fa">
+           <br> وبلاگ محمدرضا اسدی<br>
+            ایمیل : m82971311<br>
+            تلگرام/روبیکا : @MuhammadRezaAsadi<br>
+        </div>
+
+        <div class="footer-en">
+            Mohammadreza Asadi's <br>Blog
+            Email: m82971311<br>
+            Telegram/Rubika : @MuhammadRezaAsadi<br>
+        </div>
+        <div class="footer-txt">
+            <br>Copyright &copy; 2024-2026 asadidev.ir | تمامی حقوق مادی و معنوی این سایت متعلق به asadidev.ir می‌باشد.
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
+
