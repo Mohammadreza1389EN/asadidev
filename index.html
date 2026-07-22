@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمدرضا اسدی — سیستم‌های نهفته و اینترنت اشیا</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand"><span class="blip"></span>
+      <div>mraweb<small>محمدرضا اسدی — Zanjan, Iran</small></div>
+    </div>
+    <nav class="mainnav" id="mainNav">
+      <div class="navitem">
+        <span>پروژه‌ها <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="pages/quadcopter.html">کوادکوپتر<span>پرنده‌ی چهار موتوره کنترل‌شونده با موبایل</span></a>
+          <a href="pages/abvand.html">آب‌وند<span>سیستم هوشمند آبیاری مزرعه</span></a>
+        </div>
+      </div>
+      <div class="navitem"><a href="#articles">مقاله‌ها</a></div>
+      <div class="navitem">
+        <span>مخازن <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="pages/tft-library.html">کتابخانه‌ی TFT 3.5inch<span>رابط کاربری لمسی برای Arduino/ESP</span></a>
+        </div>
+      </div>
+      <a href="index.html" class="home-btn" aria-label="خانه">⌂</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="منو"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="telemetry-track" id="telemetryTrack" data-items='[
+    "SYS: mraweb.core v2.6",
+    "PROJECTS ONLINE: <b>3</b>",
+    "STACK: C++ / ESP32 / ESP8266 / Arduino",
+    "LATEST: کوادکوپتر — کنترل با موبایل",
+    "STATUS: <b>در حال توسعه</b>",
+    "UPTIME: در حال ساخت چیزهای جدید"
+  ]'></div>
+</div>
+
+<section class="hero">
+  <div class="circuit-field">
+    <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice">
+      <path class="trace" d="M -50 120 L 260 120 L 300 160 L 620 160 L 660 120 L 1000 120 L 1040 160 L 1300 160"/>
+      <path class="trace" d="M -50 460 L 220 460 L 260 420 L 560 420 L 600 460 L 940 460 L 980 420 L 1300 420"/>
+      <path class="trace" d="M 120 -30 L 120 240 L 180 300 L 180 560"/>
+      <path class="trace" d="M 980 -30 L 980 200 L 1040 260 L 1040 560"/>
+      <circle class="node" cx="260" cy="120" r="4"/>
+      <circle class="node" cx="620" cy="160" r="4"/>
+      <circle class="node" cx="1000" cy="120" r="4"/>
+      <circle class="node" cx="260" cy="420" r="4"/>
+      <circle class="node" cx="600" cy="460" r="4"/>
+      <circle class="node" cx="980" cy="420" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+    </svg>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">EMBEDDED SYSTEMS // IoT // C++</div>
+      <h1>چیزهایی می‌سازم که <span class="hl">فکر می‌کنن، حس می‌کنن</span> و از راه دور جواب می‌دن.</h1>
+      <p class="lead">من محمدرضا اسدی هستم، از زنجان. روی مرز سخت‌افزار و نرم‌افزار کار می‌کنم: از فلایت‌کنترل یه کوادکوپتر تا سیستمی که تصمیم می‌گیره کِی به یه مزرعه آب بده. برنامه‌نویسی پیشرفته‌ی C++، توسعه‌ی وب، و اینترنت اشیا روی بردهایی مثل ESP32، ESP8266 و Arduino.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">دیدن پروژه‌ها ↓</a>
+        <a href="#contact" class="btn btn-ghost">تماس با من</a>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-head"><span>SYSTEM_OVERVIEW.log</span><span class="live">ONLINE</span></div>
+      <div class="hud-row"><span class="k">پروژه‌ی فعال</span><span class="v">کوادکوپتر</span></div>
+      <div class="hud-row"><span class="k">میکروکنترلر</span><span class="v">ATmega2560</span></div>
+      <div class="hud-row"><span class="k">ارتباط</span><span class="v">ESP8266 · WiFi</span></div>
+      <div class="hud-row"><span class="k">زبان اصلی</span>
+        <span class="hud-bar-track"><span class="hud-bar-fill" data-pct="95" style="width:0"></span></span>
+      </div>
+      <div class="hud-row"><span class="k">پروژه‌ی دوم</span><span class="v">آب‌وند — مرحله نهایی</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">// درباره</span>
+      <h2>معرفی</h2>
+      <div class="sec-line"></div>
+    </div>
+    <p class="prose">سلام، اینجانب محمدرضا اسدی از شهر زنجان در کشور ایران معرفی نامه خود را تقدیم می‌دارم. با تخصص و تجربه‌ی حرفه‌ای در برنامه‌نویسی پیشرفته‌ی زبان C++ و همچنین توسعه‌ی وب، آماده‌ی ارائه‌ی خدمات تخصصی در این عرصه‌ها هستم. در طول مسیر خودم، دانش و مهارتم رو در زمینه‌های نوظهور و کلیدی مثل اینترنت اشیا (IoT) تعمیق بخشیدم و با موفقیت به کار گرفتم. تجربیات عملی ارزشمندی در کار با بردهای توسعه‌ی میکروکنترلر مثل ESP (مخصوصاً سری ESP32 و ESP8266) و همچنین پلتفرم محبوب Arduino دارم که امکان پیاده‌سازی راهکارهای خلاقانه و کارآمد در پروژه‌های مختلف رو برام فراهم آورده.</p>
+    <p class="prose">یکی از برجسته‌ترین و در عین حال چالش‌برانگیزترین دستاوردهای حرفه‌ای‌ام در یک سال اخیر، طراحی و توسعه‌ی یک سیستم کوادکوپتر (پرنده‌ی چهار موتوره) بوده — پروژه‌ای مبتنی بر تراشه‌ی قدرتمند Arduino که قابلیت کنترل از طریق تلفن همراه رو داره و نیازمند تلفیق پیچیده‌ی سخت‌افزار و نرم‌افزار، مدیریت ارتباطات بی‌سیم، و توسعه‌ی الگوریتم‌های کنترلی دقیق بوده.</p>
+
+    <div class="gauges" style="margin-top:36px;">
+      <div class="gauge-card">
+        <svg viewBox="0 0 100 100"><circle class="gauge-bg" cx="50" cy="50" r="45"/><circle class="gauge-fill" data-pct="95" cx="50" cy="50" r="45" transform="rotate(-90 50 50)"/><text class="gauge-pct" x="50" y="56" text-anchor="middle">95%</text></svg>
+        <h4>C / C++ نهفته</h4>
+      </div>
+      <div class="gauge-card">
+        <svg viewBox="0 0 100 100"><circle class="gauge-bg" cx="50" cy="50" r="45"/><circle class="gauge-fill" data-pct="90" cx="50" cy="50" r="45" transform="rotate(-90 50 50)"/><text class="gauge-pct" x="50" y="56" text-anchor="middle">90%</text></svg>
+        <h4>ESP32 / ESP8266</h4>
+      </div>
+      <div class="gauge-card">
+        <svg viewBox="0 0 100 100"><circle class="gauge-bg" cx="50" cy="50" r="45"/><circle class="gauge-fill" data-pct="88" cx="50" cy="50" r="45" transform="rotate(-90 50 50)"/><text class="gauge-pct" x="50" y="56" text-anchor="middle">88%</text></svg>
+        <h4>کنترل PID</h4>
+      </div>
+      <div class="gauge-card">
+        <svg viewBox="0 0 100 100"><circle class="gauge-bg" cx="50" cy="50" r="45"/><circle class="gauge-fill" data-pct="80" cx="50" cy="50" r="45" transform="rotate(-90 50 50)"/><text class="gauge-pct" x="50" y="56" text-anchor="middle">80%</text></svg>
+        <h4>توسعه‌ی وب</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">// پروژه‌ها</span>
+      <h2>پروژه‌های شاخص</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card featured">
+        <span class="card-tag">EMBEDDED · FLIGHT CONTROL</span>
+        <h3>کوادکوپتر کنترل‌شونده با موبایل</h3>
+        <p>یه پرنده‌ی چهار موتوره با بدنه‌ی پرینت‌سه‌بعدی، فلایت‌کنترل اختصاصی روی ATmega2560، و کنترل کامل از طریق یه اپلیکیشن موبایل — بدون هیچ رادیوکنترل سنتی.</p>
+        <div class="stack"><span>C++</span><span>ATmega2560</span><span>ESP8266</span><span>PID</span><span>MPU6050</span></div>
+        <a class="card-link" href="pages/quadcopter.html">مشاهده‌ی پروژه <span class="arrow">←</span></a>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">IoT · SMART FARMING</span>
+        <h3>آب‌وند — آبیاری هوشمند</h3>
+        <p>سیستمی بی‌سیم برای محاسبه‌ی لحظه‌ای نیاز آبی گیاه با الگوریتم تبخیر-تعرق و کنترل خودکار شیر برقی، برای تا ۱۰۰ سنسور همزمان.</p>
+        <div class="stack"><span>ESP32</span><span>سنسور رطوبت</span><span>شیر برقی</span></div>
+        <a class="card-link" href="pages/abvand.html">مشاهده‌ی پروژه <span class="arrow">←</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="articles">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">// مقاله‌ها</span>
+      <h2>مقاله‌ها</h2>
+      <div class="sec-line"></div>
+    </div>
+    <p class="prose">به‌زودی یادداشت‌های فنی درباره‌ی طراحی فلایت‌کنترل، تیونینگ PID، و معماری سیستم‌های بی‌سیم اینجا منتشر می‌شن.</p>
+  </div>
+</section>
+
+<section id="repos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-eyebrow">// مخازن</span>
+      <h2>ابزارها و کتابخانه‌ها</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">LIBRARY · ARDUINO</span>
+        <h3>کتابخانه‌ی نمایشگر TFT 3.5inch</h3>
+        <p>پیاده‌سازی سبک و بهینه برای نمایشگرهای لمسی TFT روی Arduino و ESP، با مدیریت رویداد کلیک بدون محاسبه‌ی دستی برخورد.</p>
+        <div class="stack"><span>C++</span><span>TFT_eSPI</span><span>XPT2046</span></div>
+        <a class="card-link" href="pages/tft-library.html">مشاهده‌ی مستندات <span class="arrow">←</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>یه ایده یا پروژه داری؟</h2>
+      <p>برای همکاری روی پروژه‌های نهفته، IoT، یا توسعه‌ی وب می‌تونی از همین راه‌ها باهام در ارتباط باشی.</p>
+      <div class="contact-links">
+        <a href="mailto:m82971311@gmail.com" class="btn btn-primary">ایمیل: m82971311</a>
+        <a href="https://t.me/MuhammadRezaAsadi" class="btn btn-ghost">تلگرام/روبیکا: @MuhammadRezaAsadi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2024–2026 asadidev.ir — تمامی حقوق مادی و معنوی این سایت متعلق به محمدرضا اسدی است.</div>
+</footer>
+
+</body>
+</html>

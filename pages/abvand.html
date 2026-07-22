@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آب‌وند — محمدرضا اسدی</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand"><span class="blip"></span>
+      <div>mraweb<small>محمدرضا اسدی — Zanjan, Iran</small></div>
+    </div>
+    <nav class="mainnav" id="mainNav">
+      <div class="navitem active">
+        <span>پروژه‌ها <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="quadcopter.html">کوادکوپتر<span>پرنده‌ی چهار موتوره کنترل‌شونده با موبایل</span></a>
+          <a href="abvand.html">آب‌وند<span>سیستم هوشمند آبیاری مزرعه</span></a>
+        </div>
+      </div>
+      <div class="navitem"><a href="../index.html#articles">مقاله‌ها</a></div>
+      <div class="navitem">
+        <span>مخازن <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="tft-library.html">کتابخانه‌ی TFT 3.5inch<span>رابط کاربری لمسی برای Arduino/ESP</span></a>
+        </div>
+      </div>
+      <a href="../index.html" class="home-btn" aria-label="خانه">⌂</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="منو"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="telemetry-track" id="telemetryTrack" data-items='[
+    "SOIL MOISTURE: <b>در حال پایش</b>",
+    "SENSOR NODES: تا <b>100</b> عدد در هر سرور",
+    "VALVE: شیر برقی هوشمند",
+    "ALGORITHM: Evapotranspiration Model",
+    "PROJECT STATUS: <span class=\"warn\">مرحله‌ی نهایی</span>"
+  ]'></div>
+</div>
+
+<section class="hero">
+  <div class="circuit-field">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <path class="trace" d="M -50 90 L 240 90 L 280 130 L 640 130 L 680 90 L 1300 90"/>
+      <path class="trace" d="M -50 360 L 300 360 L 340 320 L 860 320 L 900 360 L 1300 360"/>
+      <circle class="node" cx="240" cy="90" r="4"/>
+      <circle class="node" cx="640" cy="130" r="4"/>
+      <circle class="node" cx="300" cy="360" r="4"/>
+      <circle class="node" cx="860" cy="320" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="eyebrow">IoT // SMART IRRIGATION // ESP32</div>
+    <h1>مزرعه‌ای که خودش می‌فهمه <span class="hl">کِی تشنه‌ست</span>.</h1>
+    <p class="lead">با توجه به بحران جدی کم‌آبی در سال‌های اخیر و سهم عمده‌ی منابع آبی کشور که به کشاورزی و روش‌های آبیاری سنتی اختصاص داره، آب‌وند به‌عنوان یه سیستم نوین برای بهینه‌سازی مصرف آب در مزارع طراحی و توسعه یافته.</p>
+    <div class="hero-actions">
+      <a href="#how" class="btn btn-primary">نحوه‌ی کار سیستم ↓</a>
+      <a href="../index.html#contact" class="btn btn-ghost">تماس برای همکاری</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// اصول عملکرد</span><h2>هوشمندی سیستم</h2><div class="sec-line"></div></div>
+    <p class="prose">دستگاه آب‌وند تنها یه سیستم آبیاری معمولی نیست؛ بلکه با بهره‌گیری از الگوریتم‌های پیشرفته‌ی تبخیر-تعرق (Evapotranspiration) و اندازه‌گیری دقیق پارامترهای محیطی، نیاز آبی گیاه رو در لحظه محاسبه می‌کنه. این سیستم با اتصال به سنسورهای دقیق رطوبت خاک و سنسورهای دما، داده‌های محیطی رو تحلیل کرده و فرآیند آبیاری رو با دقت بالا و در زمان مناسب انجام می‌ده.</p>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// ساختار</span><h2>سه بخش، یک شبکه‌ی بی‌سیم</h2><div class="sec-line"></div></div>
+    <p class="sec-sub">این سیستم هوشمند از سه بخش اصلی تشکیل شده که ارتباطی کاملاً بی‌سیم با یکدیگر دارن.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">01 · CORE</span>
+        <h3>سرور مدیریت مرکزی</h3>
+        <p>مغز متفکر سیستم که وظیفه‌ی پردازش داده‌ها و ارسال دستورات رو بر عهده داره.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">02 · SENSE</span>
+        <h3>سنسورهای اندازه‌گیری</h3>
+        <p>دستگاه‌های دقیقی برای پایش مستمر رطوبت خاک و دمای محیط.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">03 · ACT</span>
+        <h3>شیر برقی هوشمند</h3>
+        <p>مکانیزم اجرایی که بر اساس دستورات دریافتی، جریان آب رو کنترل می‌کنه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// امکانات</span><h2>قابلیت‌ها</h2><div class="sec-line"></div></div>
+    <ul class="bullets">
+      <li><b>پوشش‌دهی گسترده:</b> هر سرور مرکزی قادره تا ۱۰۰ سنسور مختلف رو پشتیبانی و مدیریت کنه، که این امکان رو برای اداره‌ی مزارع بزرگ فراهم می‌آره.</li>
+      <li><b>مدیریت چندمحصوله:</b> امکان انتخاب نوع گیاه یا میوه در پنل کاربری سرور. این ویژگی به سیستم اجازه می‌ده نیازهای آبیاری هر گونه گیاه رو مجزا و متناسب با شرایطش مدیریت کنه.</li>
+      <li><b>رابط کاربری لمسی:</b> سرور مرکزی مجهز به یه پنل لمسی کاربرپسنده که دسترسی به برنامه‌های مختلف مدیریتی مزرعه رو برای کاربر آسان می‌سازه.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="status">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// وضعیت</span><h2>مسیر پروژه</h2><div class="sec-line"></div></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4>طراحی الگوریتم آبیاری</h4>
+        <p>پیاده‌سازی مدل تبخیر-تعرق برای محاسبه‌ی نیاز آبی لحظه‌ای گیاه.</p>
+      </div>
+      <div class="tl-item">
+        <h4>شبکه‌ی سنسور بی‌سیم</h4>
+        <p>توسعه‌ی گره‌های سنسور رطوبت خاک و دما با پشتیبانی تا ۱۰۰ گره در هر سرور.</p>
+      </div>
+      <div class="tl-item">
+        <h4>پنل مدیریت لمسی</h4>
+        <p>رابط کاربری سرور مرکزی برای انتخاب نوع محصول و مشاهده‌ی وضعیت مزرعه.</p>
+      </div>
+      <div class="tl-item">
+        <h4>مرحله‌ی نهایی تکمیل</h4>
+        <p>این پروژه در مرحله‌ی نهایی تکمیله و با هدف ارائه‌ی راهکاری پایدار و اقتصادی برای مقابله با چالش‌های آبی کشور، در حال آماده‌سازی برای بهره‌برداریه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2>علاقه‌مند به همکاری روی آب‌وند هستی؟</h2>
+      <p>چه در حوزه‌ی کشاورزی هوشمند فعالیت می‌کنی، چه فقط کنجکاوی درباره‌ی جزئیات فنی داری — خوشحال می‌شم صحبت کنیم.</p>
+      <div class="contact-links">
+        <a href="mailto:m82971311@gmail.com" class="btn btn-primary">ایمیل: m82971311</a>
+        <a href="https://t.me/MuhammadRezaAsadi" class="btn btn-ghost">تلگرام/روبیکا: @MuhammadRezaAsadi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2024–2026 asadidev.ir — تمامی حقوق مادی و معنوی این سایت متعلق به محمدرضا اسدی است.</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کتابخانه‌ی TFT 3.5inch — محمدرضا اسدی</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<script src="../app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand"><span class="blip"></span>
+      <div>mraweb<small>محمدرضا اسدی — Zanjan, Iran</small></div>
+    </div>
+    <nav class="mainnav" id="mainNav">
+      <div class="navitem">
+        <span>پروژه‌ها <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="quadcopter.html">کوادکوپتر<span>پرنده‌ی چهار موتوره کنترل‌شونده با موبایل</span></a>
+          <a href="abvand.html">آب‌وند<span>سیستم هوشمند آبیاری مزرعه</span></a>
+        </div>
+      </div>
+      <div class="navitem"><a href="../index.html#articles">مقاله‌ها</a></div>
+      <div class="navitem active">
+        <span>مخازن <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="tft-library.html">کتابخانه‌ی TFT 3.5inch<span>رابط کاربری لمسی برای Arduino/ESP</span></a>
+        </div>
+      </div>
+      <a href="../index.html" class="home-btn" aria-label="خانه">⌂</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="منو"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="telemetry-track" id="telemetryTrack" data-items='[
+    "DISPLAY: TFT 3.5inch touch",
+    "DRIVER: TFT_eSPI + XPT2046",
+    "API: tfUI.h",
+    "FOOTPRINT: <b>lightweight</b>",
+    "TARGET: ESP32 / Arduino"
+  ]'></div>
+</div>
+
+<section class="hero">
+  <div class="circuit-field">
+    <svg viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice">
+      <path class="trace" d="M -50 100 L 260 100 L 300 140 L 700 140 L 740 100 L 1300 100"/>
+      <path class="trace" d="M -50 340 L 300 340 L 340 300 L 900 300 L 940 340 L 1300 340"/>
+      <circle class="node" cx="260" cy="100" r="4"/>
+      <circle class="node" cx="700" cy="140" r="4"/>
+      <circle class="node" cx="300" cy="340" r="4"/>
+      <circle class="node" cx="900" cy="300" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="eyebrow">LIBRARY // ARDUINO · ESP32</div>
+    <h1>یه رابط لمسی، بدون <span class="hl">دردسر Collision Detection</span>.</h1>
+    <p class="lead">این کتابخانه یه پیاده‌سازی سبک (Lightweight) و بهینه‌سازی‌شده از کتابخانه‌ی اصلی نمایشگرهای TFT 3.5 اینچه که برای محیط‌های Arduino و طیف گسترده‌ای از میکروکنترلرها توسعه یافته.</p>
+    <div class="hero-actions">
+      <a href="#usage" class="btn btn-primary">شروع استفاده ↓</a>
+      <a class="btn btn-ghost" href="#download">دانلود ZIP</a>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// ویژگی‌ها</span><h2>چرا این کتابخانه</h2><div class="sec-line"></div></div>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">SIMPLE</span>
+        <h3>سادگی در پیاده‌سازی</h3>
+        <p>ارائه‌ی توابعی ساده برای ترسیم اشکال هندسی مختلف، بدون شلوغی کد.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">EVENTS</span>
+        <h3>مدیریت رویدادها</h3>
+        <p>امکان تعریف قابلیت کلیک روی اشیاء بدون نیاز به محاسبه‌ی دستی مختصات برخورد (Collision Detection).</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">PERFORMANCE</span>
+        <h3>بهینه‌سازی منابع</h3>
+        <p>کاهش پیچیدگی کد برای دستیابی به سرعت اجرای بالاتر در سیستم‌های Embedded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usage">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// مستندات</span><h2>فراخوانی و استفاده</h2><div class="sec-line"></div></div>
+
+    <p class="prose">فراخوانی کتابخانه:</p>
+    <div class="codebox">
+      <div class="code-head"><span>main.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">#include &lt;Arduino.h&gt;
+#include &lt;SPI.h&gt;
+#include &lt;TFT_eSPI.h&gt;
+#include &lt;XPT2046_Touchscreen.h&gt;
+#include &lt;tfUI.h&gt;
+#include &lt;pgmspace.h&gt;</code></pre>
+    </div>
+
+    <p class="prose">تعریف پین‌های نمایشگر:</p>
+    <div class="codebox">
+      <div class="code-head"><span>pins.h</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">#define TFT_CS   5
+#define TFT_DC   2
+#define TFT_RST  4
+#define TOUCH_CS 15
+#define TOUCH_IRQ 21</code></pre>
+    </div>
+
+    <p class="prose">تعریف شیء SPI و tfUI:</p>
+    <div class="codebox">
+      <div class="code-head"><span>setup.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">XPT2046_Touchscreen ts(TOUCH_CS);
+TFT_eSPI tft = TFT_eSPI();</code></pre>
+    </div>
+
+    <p class="prose">تعریف اشکال مختلف:</p>
+    <div class="codebox">
+      <div class="code-head"><span>shapes.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">tf::RoundedRect NAME = tf::makeRounded(tft, WIDTH, HEIGHT, BORDER_RADIUS); // تعریف roundedrect
+tf::Rect NAME = tf::makeRect(tft, WIDTH, HEIGHT);                          // تعریف مستطیل
+tf::Circle NAME = tf::makeCircle(tft, RADIUS);                             // تعریف دایره
+tf::Text NAME = tf::makeText(tft, SIZE);                                   // تعریف متن</code></pre>
+    </div>
+
+    <p class="prose">تعریف عکس (کد hex):</p>
+    <div class="codebox">
+      <div class="code-head"><span>image.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">const uint16_t IMAGE_HEX[SIZE] PROGMEM = {
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FF5,
+0x0FF5,0x0FF5,0x0FF5,0x0FF5,0x0FD5,0x0F74,0x0FF5,0x0FF5,
+// ...
+};
+
+tf::ImageHEX NAME(tft, IMAGE_HEX, WIDTH, HEIGHT);</code></pre>
+    </div>
+
+    <p class="prose">تنظیمات اشکال:</p>
+    <div class="codebox">
+      <div class="code-head"><span>shape-config.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">NAME.setPosition(X,Y);             // تعیین موقعیت
+NAME.setFillColor(COLOR);          // رنگ داخل شکل
+NAME.setOutlineColor(COLOR);       // رنگ دور شکل
+NAME.setOutlineThickness(SIZE);    // ضخامت دور شکل
+NAME.setVisible(BOOL);             // وضعیت مشاهده
+NAME.draw();                       // رسم شکل
+NAME.clear();                      // پاک کردن شکل</code></pre>
+    </div>
+
+    <p class="prose">تعریف رنگ:</p>
+    <div class="codebox">
+      <div class="code-head"><span>color.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">#define NAME tft.color565(R, G, B)    // 0 &lt;= R,G,B &lt;= 255</code></pre>
+    </div>
+
+    <p class="prose">تنظیمات متن:</p>
+    <div class="codebox">
+      <div class="code-head"><span>text.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">NAME.setPosition(X,Y);       // تعیین موقعیت
+NAME.setbgColor(COLOR);      // رنگ پس‌زمینه
+NAME.setColor(COLOR);        // رنگ متن
+NAME.setString(STRING);      // متن عنصر
+NAME.setText(STRING);        // به‌روزرسانی متن عنصر
+NAME.setVisible(BOOL);       // حالت نمایش
+NAME.draw();                 // رسم متن
+NAME.clear();                // پاک کردن متن</code></pre>
+    </div>
+
+    <p class="prose">تنظیمات عکس:</p>
+    <div class="codebox">
+      <div class="code-head"><span>image-config.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">NAME.setPosition(X,Y);         // تعیین موقعیت
+NAME.setVisible(BOOL);         // حالت نمایش
+NAME.clear();                  // پاک کردن از صفحه
+NAME.draw();                   // رسم تصویر</code></pre>
+    </div>
+
+    <p class="prose">بررسی کلیک روی عنصر:</p>
+    <div class="codebox">
+      <div class="code-head"><span>click.ino</span><button class="copy-btn">کپی</button></div>
+      <pre><code class="language-cpp">NAME.isClicked(ts)    // اگر کلیک شده باشد 1، اگر نه 0
+
+// مثال:
+if (NAME.isClicked(ts))
+    Serial.print("clicked!");
+else
+    Serial.print("notclicked");</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="container">
+    <div class="contact-box">
+      <h2>کتابخانه رو دانلود کن</h2>
+      <p>فایل ZIP کامل کتابخانه شامل تمام هدرها و مثال‌های استفاده.</p>
+      <div class="contact-links">
+        <a href="#" class="btn btn-primary">دانلود فایل ZIP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2024–2026 asadidev.ir — تمامی حقوق مادی و معنوی این سایت متعلق به محمدرضا اسدی است.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c++.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if(typeof Prism !== 'undefined') Prism.highlightAll();
+  });
+</script>
+
+</body>
+</html>

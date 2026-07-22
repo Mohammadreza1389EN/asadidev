@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کوادکوپتر — محمدرضا اسدی</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../app.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand"><span class="blip"></span>
+      <div>mraweb<small>محمدرضا اسدی — Zanjan, Iran</small></div>
+    </div>
+    <nav class="mainnav" id="mainNav">
+      <div class="navitem active">
+        <span>پروژه‌ها <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="quadcopter.html">کوادکوپتر<span>پرنده‌ی چهار موتوره کنترل‌شونده با موبایل</span></a>
+          <a href="abvand.html">آب‌وند<span>سیستم هوشمند آبیاری مزرعه</span></a>
+        </div>
+      </div>
+      <div class="navitem"><a href="../index.html#articles">مقاله‌ها</a></div>
+      <div class="navitem">
+        <span>مخازن <span class="chev">▾</span></span>
+        <div class="dropdown">
+          <a href="tft-library.html">کتابخانه‌ی TFT 3.5inch<span>رابط کاربری لمسی برای Arduino/ESP</span></a>
+        </div>
+      </div>
+      <a href="../index.html" class="home-btn" aria-label="خانه">⌂</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="منو"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="telemetry">
+  <div class="telemetry-track" id="telemetryTrack" data-items='[
+    "MCU: ATmega2560",
+    "LINK: ESP8266 WiFi <b>CONNECTED</b>",
+    "IMU: MPU6050 6-axis",
+    "BATTERY: 3S LiPo 2200mAh 35C",
+    "MOTORS: 4× brushless 1000KV",
+    "WEIGHT: <b>1103g</b>",
+    "STATUS: <span class=\"warn\">GPS accuracy: basic</span>"
+  ]'></div>
+</div>
+
+<section class="hero">
+  <div class="circuit-field">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <path class="trace" d="M -50 100 L 300 100 L 340 140 L 700 140 L 740 100 L 1300 100"/>
+      <path class="trace" d="M -50 380 L 260 380 L 300 340 L 900 340 L 940 380 L 1300 380"/>
+      <circle class="node" cx="300" cy="100" r="4"/>
+      <circle class="node" cx="700" cy="140" r="4"/>
+      <circle class="node" cx="260" cy="380" r="4"/>
+      <circle class="node" cx="900" cy="340" r="4"/>
+      <circle class="pulse" r="4"/>
+      <circle class="pulse" r="4"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="eyebrow">FLIGHT CONTROL // C++ // ATmega2560</div>
+    <h1>کوادکوپتری که <span class="hl">با موبایل</span> پرواز می‌کنه، نه با رادیوکنترل.</h1>
+    <p class="lead">اولین کوادکوپترم؛ حدود ۵۰ سانتی‌متر طول و عرض، با چهار موتور براشلس KV1000، فلایت‌کنترل اختصاصی مبتنی بر ATmega2560، و ارتباط تمام‌بی‌سیم با گوشی از طریق ESP8266.</p>
+
+    <div class="spec-grid">
+      <div class="spec-box"><div class="num">1103g</div><div class="lbl">وزن نهایی</div></div>
+      <div class="spec-box"><div class="num">49×49cm</div><div class="lbl">ابعاد بدنه</div></div>
+      <div class="spec-box"><div class="num">4×1000KV</div><div class="lbl">موتور براشلس</div></div>
+      <div class="spec-box"><div class="num">9.5"</div><div class="lbl">ملخ</div></div>
+      <div class="spec-box"><div class="num">2200mAh</div><div class="lbl">باتری 3S LiPo</div></div>
+      <div class="spec-box"><div class="num">77A</div><div class="lbl">توان خروجی (35C)</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// معرفی</span><h2>درباره‌ی پروژه</h2><div class="sec-line"></div></div>
+    <p class="prose">سلام! من محمدرضا اسدی هستم از زنجان، ایران. این اولین کوادکوپترمه که با زبان برنامه‌نویسی C++ برنامه‌نویسی کردم. این کوادکوپتر حدود ۵۰ سانتی‌متر طول و عرض داره و با چهار موتور براشلس KV1000 کنترل می‌شه. جالبه که این کوادکوپتر از طریق گوشی موبایل کنترل می‌شه و نیازی به کنترل رادیویی نداره. برد کنترل پرواز این کوادکوپتر از چیپ ATmega2560 استفاده می‌کنه که تفاوتی با برد آردوینو نداره. برای ارتباط با گوشی هم از ESP8266 استفاده شده.</p>
+    <p class="prose">این کوادکوپتر با ابعاد بدنه‌ی ۴۹×۴۹ سانتی‌متر و استفاده از فیلامنت ABS (ساخته‌شده با پرینتر سه‌بعدی) طراحی شده. به دلیل متریال به‌کار رفته، بدنه استحکام و وزن مناسبی داره که منجر به وزن نهایی ۱۱۰۳ گرم شده.</p>
+    <img src="quadcopter.jpg" alt="کوادکوپتر" style="border-radius:var(--radius); border:1px solid var(--line); margin-top:28px; width:100%; max-width:720px;">
+  </div>
+</section>
+
+<section id="media">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// ویدیو</span><h2>پرواز واقعی</h2><div class="sec-line"></div></div>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">FLIGHT TEST</span>
+        <h3>پرواز عادی</h3>
+        <video controls style="width:100%; border-radius:var(--radius-sm); margin-top:12px;" poster="../images/quadcopter_fly.png">
+          <source src="../videos/quadcopter_video.mp4" type="video/mp4">
+          مرورگر شما از تگ ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+      <div class="card">
+        <span class="card-tag">GRIPPER VERSION</span>
+        <h3>نسخه‌ی دارای گریپر</h3>
+        <video controls style="width:100%; border-radius:var(--radius-sm); margin-top:12px;" poster="../images/quadcopter_fly2.png">
+          <source src="../videos/quadcopter_videogripper.mp4" type="video/mp4">
+          مرورگر شما از تگ ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+    </div>
+
+<section id="systems">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// زیرسیستم‌ها</span><h2>معماری سیستم</h2><div class="sec-line"></div></div>
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag">PROPULSION</span>
+        <h3>سیستم پیشران</h3>
+        <p>۴ موتور براشلس با نرخ ۱۰۰۰KV، مجهز به ESCهای ۳۰ آمپر و ملخ‌های ۹.۵ اینچ. تغذیه از یک باتری Li-Po ۳ سلول (۱۱.۱ ولت) با ظرفیت ۲۲۰۰ میلی‌آمپرساعت و نرخ تخلیه‌ی ۳۵C که توان خروجی تا ۷۷ آمپر رو فراهم می‌کنه.</p>
+        <div class="stack"><span>Brushless 1000KV</span><span>ESC 30A</span><span>3S LiPo</span></div>
+      </div>
+      <div class="card">
+        <span class="card-tag">CONTROL & NAV</span>
+        <h3>کنترل و ناوبری</h3>
+        <p>هسته‌ی اصلی عملیات بر عهده‌ی یه فلایت‌کنترل اختصاصیه که با طراحی PCB شخصی و میکروکنترلر ATmega2560 و ماژول ESP8266 توسعه یافته. الگوریتم‌های کنترل تعادلی بر پایه‌ی پروتکل PID و فیلترهای پردازشی پیاده‌سازی شدن.</p>
+        <div class="stack"><span>ATmega2560</span><span>PID</span><span>MPU6050</span></div>
+      </div>
+      <div class="card">
+        <span class="card-tag">COMMS</span>
+        <h3>ارتباطات و ریموت</h3>
+        <p>این پهپاد فاقد رادیوکنترل سنتیه و از طریق یه اپلیکیشن اختصاصی (طراحی‌شده توسط خودم) روی گوشی هوشمند کنترل می‌شه. سیستم مجهز به GPS برای نمایش موقعیت مکانیه (با توجه به محدودیت‌های فعلی، دقت ناوبری در سطح پایه‌ست).</p>
+        <div class="stack"><span>ESP8266 WiFi</span><span>اپلیکیشن اختصاصی</span><span>GPS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="container">
+    <div class="sec-head"><span class="sec-eyebrow">// مشخصات فنی</span><h2>Specifications</h2><div class="sec-line"></div></div>
+    <div class="grid">
+      <div class="card">
+        <h3>سیستم پیشران</h3>
+        <ul class="bullets">
+          <li>Motor: Brushless Motor, 1000KV</li>
+          <li>Propeller: 9.5 inch High-Efficiency Propeller</li>
+          <li>ESC: 30A Brushless ESC</li>
+          <li>Power: 3S LiPo Battery (2200mAh, 35C Discharge Rate)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>کنترل و پردازش</h3>
+        <ul class="bullets">
+          <li>Main Flight Controller: ATmega2560</li>
+          <li>Communication Module: ESP8266 (WiFi Telemetry/Control)</li>
+          <li>IMU: MPU6050 (6-Axis Gyroscope & Accelerometer)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>ناوبری</h3>
+        <ul class="bullets">
+          <li>GPS Module: High-precision GNSS Module</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="repo">
+  <div class="container">
+    <div class="contact-box">
+      <h2>دسترسی به مخزن کامل پروژه</h2>
+      <p>فایل‌های سورس C++، نقشه‌های سخت‌افزار و فایل‌های پیکربندی این پروژه از طریق گیت‌هاب در دسترسه.</p>
+      <div class="contact-links">
+        <a href="https://github.com/Mohammadreza1389EN/quadcopter-drone-project" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.17-.35 6.49-1.56 6.49-7A5.48 5.48 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.48 5.48 0 0 0-1.5 3.78c0 5.42 3.3 6.64 6.49 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          مشاهده در گیت‌هاب
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2024–2026 asadidev.ir — تمامی حقوق مادی و معنوی این سایت متعلق به محمدرضا اسدی است.</div>
+</footer>
+
+</body>
+</html>
